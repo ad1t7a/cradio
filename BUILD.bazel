@@ -1,0 +1,11 @@
+# -*- python -*-
+
+load("@rules_python//python:defs.bzl", "py_binary")
+
+exports_files(["sandbox_notebook.ipynb"])
+
+sh_binary(
+    name = "launch_jupyter",
+    srcs = ["//tools:scripts/run_notebook.sh"],
+    data = ["//:sandbox_notebook.ipynb"],
+)

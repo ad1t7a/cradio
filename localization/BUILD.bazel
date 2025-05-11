@@ -1,0 +1,14 @@
+load("@rules_python//python:defs.bzl", "py_binary")
+
+py_binary(
+    name = "gps",
+    srcs = ["main.py"],
+    main = "main.py",
+    deps = [
+        "@cradio_python_deps//matplotlib:pkg",
+        "@cradio_python_deps//numpy:pkg",
+        "@cradio_python_deps//pyrtlsdr",
+        "@cradio_python_deps//pyrtlsdrlib",
+        "@cradio_python_deps//scipy:pkg",
+    ],
+)
