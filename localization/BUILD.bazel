@@ -1,5 +1,11 @@
 load("@rules_python//python:defs.bzl", "py_binary")
 
+sh_binary(
+    name = "enable_bias",
+    srcs = ["enable_bias.sh"],
+    visibility = ["//visibility:public"],
+)
+
 py_binary(
     name = "gps",
     srcs = ["main.py"],
@@ -11,4 +17,5 @@ py_binary(
         "@cradio_python_deps//pyrtlsdrlib",
         "@cradio_python_deps//scipy:pkg",
     ],
+    visibility = ["//visibility:public"],
 )
